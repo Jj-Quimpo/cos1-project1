@@ -72,15 +72,15 @@ Most repositories contain a .gitignore file.
 
 - What is the purpose of this file?
   <br>
-  [Fill in answer here]
+  [Prevents tracking of unnecessary and or sensitive files, helps keep the repository clean.]
 
 - What is the "**.DS_Store**" file and why would you want to ignore it?
   <br>
-  [Fill in answer here]
+  [.DS_Store is a file that contains finder specific view preferences. It is harmless but it is best left alone because it can cause issues for Git especially when you try to commit.]
 
 - What other file or folder would you want to add to a .gitignore file and why?
   <br>
-  [Fill in answer here]
+  [You want to add local, sensitive, and unnecessary files to the .gitignore so you can avoid cluttering you repository and git history when sharing a project with others.]
 
 <br>
 
