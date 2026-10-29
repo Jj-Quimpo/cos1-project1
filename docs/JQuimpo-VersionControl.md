@@ -88,19 +88,19 @@ Most repositories contain a .gitignore file.
 
 Replace the example references below with your own links and recommended resources. It is acceptable to provide multiple links for a single topic and to use material provided to you in this class. You are encouraged to link to your own independent research as well.
 
-[ Research Summary: What resource(s) did you find most helpful this past week and why? ]
+[ I never really knew about the commands you can use inside the terminal and it was very informational on how I can access clone and commit to Git from the terminal itself. ]
 
 **Terminal Commands**  
-[Site Address](https://www.someaddress.com/full/url/)
+[terminal-mac-cheatsheet]([0nn0/terminal-mac-cheatsheet: List of my most used commands and shortcuts in the terminal for Mac](https://github.com/0nn0/terminal-mac-cheatsheet#english-version))
 
 **Three Types of Version Control**  
-[Site Address](https://www.someaddress.com/full/url/)
+[Version Control from the class](https://www.someaddress.com/full/url/)
 
 **Git Commands**  
-[Site Address](https://www.someaddress.com/full/url/)
+[GitHub Git Cheat Sheet]([git-cheat-sheet-education](https://education.github.com/git-cheat-sheet-education.pdf))
 
 **Connecting to GitHub using Terminal**  
-[Site Address](https://www.someaddress.com/full/url/)
+[GitHub Docs Set Up Git]([Set up Git - GitHub Docs](https://docs.github.com/en/get-started/git-basics/set-up-git))
 
 **Using .gitignore and Why it's Important**  
-[Site Address](https://www.someaddress.com/full/url/)
+[W3 schools Git Ignore and .gitignore]([Git Ignore and .gitignore](https://www.w3schools.com/git/git_ignore.asp))
