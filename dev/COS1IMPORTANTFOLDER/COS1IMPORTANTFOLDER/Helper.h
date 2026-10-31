@@ -11,11 +11,15 @@ private:
 
 		int i = 0;
 		if (input[i] == '-' || input[i] == '+') i++;
-		if (input[i] == '\0') return false;
-
+		if (input[i] == '\0') {
+			return false;
+		}
 		while (input[i] != '\0')
 		{
-			if (!std::isdigit(static_cast<unsigned char>(input[i]))) return false;
+			if (!std::isdigit(static_cast<unsigned char>(input[i]))) {
+				return false;
+			}
+			i++;
 		}
 		return true;
 	}
