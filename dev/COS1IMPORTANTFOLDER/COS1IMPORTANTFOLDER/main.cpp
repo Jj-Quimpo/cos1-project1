@@ -3,6 +3,8 @@
 #include <cstdlib>
 #include <ctime>
 #include "Helper.h"
+#include "Player.h"
+#include "Dungeon.h"
 
 int main()
 {
@@ -21,6 +23,15 @@ int main()
 		case 1:
 		{
 			std::cout << "you are in the game\n";
+			std::cout << "Name: ";
+			std::string roachName;
+			std::getline(std::cin, roachName);
+
+			Player userRoach(roachName);
+			Dungeon gameEngine;
+
+			gameEngine.StartGame(userRoach);
+
 			break;
 		}
 		case 2:
