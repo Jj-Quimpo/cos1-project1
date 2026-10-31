@@ -36,7 +36,7 @@ int main()
 		}
 		case 2:
 		{
-			std::cout << "\nYou are now exiting the game\n";
+			std::cout << "\nYou decide to lay your ambitions to rest and relax for now...\n";
 			menuRunning = false;
 			break;
 		}
