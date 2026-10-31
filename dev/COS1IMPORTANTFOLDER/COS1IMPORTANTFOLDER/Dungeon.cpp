@@ -13,7 +13,7 @@ void Dungeon::StartGame(Player& player) {
 	while (player.IsAlive()) {
 		mFloorsSurvived++;
 
-		std::cout << "\nFloor " << mFloorsSurvived;
+		std::cout << "\nFloor " << mFloorsSurvived << " ";
 
 		int scenarioRoll = (std::rand() % 100) + 1;
 		if (scenarioRoll <= 25) {
@@ -40,21 +40,21 @@ void Dungeon::StartGame(Player& player) {
 }
 
 void Dungeon::HandleRatAmbush(Player& player) {
-	std::cout << "This is scenario 1";
+	std::cout << "This is scenario 1\n";
 	Helper::PauseConsole();
 }
 
 void Dungeon::HandleHungryRoaches(Player& player) {
-	std::cout << "This is scenario 2";
+	std::cout << "This is scenario 2\n";
 	Helper::PauseConsole();
 }
 
 void Dungeon::HandleCrumbCache(Player& player) {
-	std::cout << "This is scenario 3";
+	std::cout << "This is scenario 3\n";
 	Helper::PauseConsole();
 }
 
 void Dungeon::HandleEmptyFloor(Player& player) {
-	std::cout << "This is scenario 4";
+	std::cout << "This is scenario 4\n";
 	Helper::PauseConsole();
 }
