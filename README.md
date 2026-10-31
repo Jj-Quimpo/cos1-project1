@@ -1,22 +1,4 @@
-# 🚀 Welcome to Project & Portfolio!
 
-This repository will be used to keep track of research and development conducted in this class. Follow the instructions below to get started.
-cos
-### Getting Started
-
-**1.** Review the [About](./docs/01_about/README.md) README and all of the links it provides.
-
-**2.** Review the documentation and [Getting Started](./docs/02_getting_started/README.md) steps in this repository's docs folder.
-
-**3.** Attend the first Live Lecture to see a live setup demo. If you are unable to attend, make sure to watch the archive.
-
-### Next Steps...
-
-After completing the above steps, feel free to begin updating this readme where indicated below. Remember to update this document each week to receive proper credit for the weekly Milestone assignment.
-
-<br>
-
-> ❗️ &nbsp; Now that you have read to this point, go ahead and delete this sentence and everything above it.
 
 <br>
 
@@ -44,7 +26,17 @@ Each week I will summarize my milestone activity and progress by writing a stand
 
 ### Week 1
 
-Replace this paragraph with your stand up for this week. Use the prompts above to summarize your most recent milestone activity and work.
+⚙️ Overview - What I worked on this past week
+**Overview**: This past week I worked on the version control assignment and started working on my Project which is a text based dungeon crawler where the player can encounter random scenarios as they progress. 
+
+🌵 Challenges - What problems did I have & how I'm addressing them
+**Challenges**: Some challenges I encountered were navigating GitHub and having my loops work properly. One of the loops I debugged was having an infinite loop making it so no matter what you chose nothing was happening. 
+
+🏆 Accomplishments - What is something I "leveled up" on this week
+**Accomplishments**: I am starting to get used to the GitHub project board and I am currently adding issues that I know I want to eventually work on in the future, and I am happy to say I got my main menu to work properly. 
+
+🔮 Next Steps - What I plan to prioritize and do next
+**Next Steps**: I plan to prioritize time management and GitHub, the month of November is going to be a very busy month especially with my work so I know I will have to do some replanning, and I sort of understand the basics of using Git but there is still plenty of things that I do not know.
 
 ### Week 2
 
