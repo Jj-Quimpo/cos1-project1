@@ -30,7 +30,8 @@ void Dungeon::StartGame(Player& player) {
 		}
 
 		if (player.IsAlive()) {
-			std::cout << "HP: " << player.GetHealth() << " Crumbs: " << player.GetCrumbs() << " Floors Cleared: " << mFloorsSurvived << "\n";
+			std::cout << "STATS | HP: " << player.GetHealth() << " Crumbs: " << player.GetCrumbs() << " Floors Cleared: " << mFloorsSurvived << "\n";
+			std::cout << "And so you continue forward...";
 			Helper::PauseConsole();
 		}
 	}
