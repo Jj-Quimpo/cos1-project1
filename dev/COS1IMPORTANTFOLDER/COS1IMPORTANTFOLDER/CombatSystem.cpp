@@ -6,7 +6,7 @@
 void CombatSystem::EngageBattle(Player& player)
 {
 	Helper::ClearConsoleWindow();
-	std::cout << "You stumble across a menacing rat, it's ears twitches and it sets it's red eyes upon you!";
+	std::cout << "You stumble across a menacing rat, it's ears twitches and it sets it's red eyes upon you!\n";
 	std::cout << player.GetName() << " stands ready to face the ugly rat!\n\n";
 
 	int ratHealth = 50;

@@ -21,6 +21,8 @@ void Dungeon::StartGame(Player& player) {
 	while (player.IsAlive()) {
 		mFloorsSurvived++;
 
+		Helper::ClearConsoleWindow();
+
 		std::cout << "\nFloor " << mFloorsSurvived << "\n";
 
 		int scenarioRoll = (std::rand() % 100) + 1;
@@ -45,8 +47,8 @@ void Dungeon::StartGame(Player& player) {
 	}
 
 	Helper::ClearConsoleWindow();
-	std::cout << "YOU ARE NOTHING MORE THAN JUST A CORPSE...";
-	std::cout << player.GetName() << " pershed inside the drywall.\n";
+	std::cout << "YOU ARE NOTHING MORE THAN JUST A CORPSE...\n\n";
+	std::cout << player.GetName() << " pershed inside the drywall.\n\n";
 	std::cout << "Floors Explored: " << mFloorsSurvived << "\n";
 	std::cout << "Final Crumb Count: " << player.GetCrumbs() << "\n";
 }
