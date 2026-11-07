@@ -1,5 +1,6 @@
 #include "Dungeon.h"
 #include "Helper.h"
+#include "CombatSystem.h"
 #include <iostream>
 #include <cstdlib>
 
@@ -44,8 +45,7 @@ void Dungeon::StartGame(Player& player) {
 }
 
 void Dungeon::HandleRatAmbush(Player& player) {
-	std::cout << "scenario 1";
-	Helper::PauseConsole();
+	CombatSystem::EngageBattle(player);
 }
 
 void Dungeon::HandleHungryRoaches(Player& player) {
