@@ -6,11 +6,18 @@
 
 Dungeon::Dungeon() {
 	mFloorsSurvived = 0;
-
+	mFloorDescriptions = {
+		"You enter a tight gap choked with pink fiberglass insulation.",
+		"You scurry near an old electrical outlet box humming with live wires.",
+		"A warm draft carries the smell of old grease from behind stove piping.",
+		"The wall cavity opens up near a leaky copper water line pipe."
+	};
 }
 
 void Dungeon::StartGame(Player& player) {
-	
+	std::cout << "\nYou twitch your antennae and squeeze through the baseboard gap...\n";
+	Helper::PauseConsole();
+
 	while (player.IsAlive()) {
 		mFloorsSurvived++;
 
@@ -32,7 +39,7 @@ void Dungeon::StartGame(Player& player) {
 
 		if (player.IsAlive()) {
 			std::cout << "\nSTATS | HP: " << player.GetHealth() << " | Crumbs: " << player.GetCrumbs() << " | Floors Cleared: " << mFloorsSurvived << "\n";
-			std::cout << "And so you continue forward...\n";
+			std::cout << "\nAnd so you continue forward...\n";
 			Helper::PauseConsole();
 		}
 	}

@@ -7,6 +7,7 @@ class Dungeon
 {
 private:
 	int mFloorsSurvived;
+	std::vector<std::string> mFloorDescriptions;
 
 	void HandleRatAmbush(Player& player);
 	void HandleHungryRoaches(Player& player);
