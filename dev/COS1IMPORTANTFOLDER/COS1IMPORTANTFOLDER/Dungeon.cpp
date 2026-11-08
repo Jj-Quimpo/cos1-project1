@@ -15,7 +15,7 @@ Dungeon::Dungeon() {
 }
 
 void Dungeon::StartGame(Player& player) {
-	std::cout << "\nYou twitch your antennae and squeeze through the baseboard gap...\n";
+	std::cout << "\nYou twitch your antennae, tighten your bag and squeeze through the baseboard gap...\n";
 	Helper::PauseConsole();
 
 	while (player.IsAlive()) {
