@@ -40,7 +40,13 @@ Each week I will summarize my milestone activity and progress by writing a stand
 
 ### Week 2
 
-My next stand up will go here...
+**Overview** – _What did you work on this past week?_ I worked on the combat system as well as made the ClearScreen helper method to deal with the clutter. I also continued to add in more text to deepen the story and made outcomes from the different choices you can make in the scenarios.  
+
+**Challenges** – _What obstacles did you encounter, and how are you addressing them?_ The issues at the moment; the turn base fight feels scripted, at the moment it just feels like if you did this this will happen (example when you attack, the enemy will attack back with this) I will have to adjust the methods and possibly include a flip coin system to give a certain turn feel (inspiration: Fear & Hunger 1/2)  
+
+**Accomplishments** – _What is something you learned, improved, or "leveled up" on this week?_ I learned the good ways to include a helper method. And improved my understanding on using vectors to cycle through the different floor descriptions.  
+
+**Next Steps** – _What do you plan to prioritize before Week 3?_ I plan to prioritize the combat system, as well as the difficulty scaling Rebbecca has brought up in terms of balance.
 
 ### Week 3
 

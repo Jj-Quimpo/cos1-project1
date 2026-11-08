@@ -54,4 +54,9 @@ public:
 		std::cout << "Press Enter to continue...";
 		std::cin.get();
 	}
+
+	static void ClearConsoleWindow()
+	{
+		std::cout << "\033[2J\033[1;1H" << std::flush;
+	}
 };
