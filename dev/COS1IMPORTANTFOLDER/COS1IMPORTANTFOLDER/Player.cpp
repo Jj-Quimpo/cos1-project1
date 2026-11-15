@@ -6,7 +6,9 @@ Player::Player(const std::string& name) {
 	mCrumbs = 5;
 	mAttackBonus = 0;
 	mDefenseBonus = 0;
-	mInventory = { "Stale Sugar Crystal" };
+	mSpearLevel = 1;
+	mShieldLevel = 1;
+	mInventory = { "Splinter Spear (Lv. 1)","Soda Tab Buckler (Lv. 1)", "Stale Sugar Crystal" };
 }
 
 std::string Player::GetName() const {
@@ -24,6 +26,12 @@ int Player::GetAttackPower() const {
 int Player::GetDefenseBonus() const {
 	return mDefenseBonus;
 }
+int Player::GetSpearLevel() const { 
+	return mSpearLevel; 
+}
+int Player::GetShieldLevel() const {
+	return mShieldLevel;
+}
 const std::vector<std::string>& Player::GetInventory() const {
 	return mInventory;
 }
@@ -40,20 +48,56 @@ void Player::ModifyCrumbs(int amount) {
 
 void Player::UpgradeAttack(int amount) {
 	mAttackBonus += amount;
+	std::string oldSpear = "Splinter Spear (Lv. " + std::to_string(mSpearLevel) + ")";
+	mSpearLevel++;
+	std::string newSpear = "Splinter Spear (Lv. " + std::to_string(mSpearLevel) + ")";
+
+	auto it = std::find(mInventory.begin(), mInventory.end(), oldSpear);
+	if (it != mInventory.end()) {
+		*it = newSpear;
+	}
 }
 
 void Player::UpgradeDefense(int amount) {
 	mDefenseBonus += amount;
+	std::string oldShield = "Soda Tab Buckler (Lv. " + std::to_string(mShieldLevel) + ")";
+	mShieldLevel++;
+	std::string newShield = "Soda Tab Buckler (Lv. " + std::to_string(mShieldLevel) + ")";
+
+	auto it = std::find(mInventory.begin(), mInventory.end(), oldShield);
+	if (it != mInventory.end()) {
+		*it = newShield;
+	}
 }
 
 void Player::AddItem(const std::string& item) {
 	mInventory.push_back(item);
-	if (item == "Splinter Spear") {
-		mAttackBonus += 7;
+}
+bool Player::UseHealingItem() {
+	auto cubeIt = std::find(mInventory.begin(), mInventory.end(), "Sugar Cube");
+	if (cubeIt != mInventory.end()) {
+		mInventory.erase(cubeIt);
+		ModifyHealth(35);
+		return true;
 	}
-	else if (item == "Soda Tab Buckler") {
-		mDefenseBonus += 4;
+
+	auto crystalIt = std::find(mInventory.begin(), mInventory.end(), "Stale Sugar Crystal");
+	if (crystalIt != mInventory.end()) {
+		mInventory.erase(crystalIt);
+		ModifyHealth(10);
+		return true;
 	}
+	return false;
+}
+
+int Player::GetHealingItemCount() const {
+	int count = 0;
+	for (const std::string& item : mInventory) {
+		if (item == "Sugar Cube" || item == "Stale Sugar Crystal") {
+			count++;
+		}
+	}
+	return count;
 }
 
 bool Player::IsAlive() const {

@@ -30,6 +30,9 @@
     <ClCompile Include="Rat.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Merchant.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Helper.h">
@@ -45,6 +48,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Rat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Merchant.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
