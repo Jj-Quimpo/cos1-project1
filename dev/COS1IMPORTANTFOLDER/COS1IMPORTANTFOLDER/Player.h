@@ -23,6 +23,8 @@ public:
 
 	void ModifyHealth(int amount);
 	void ModifyCrumbs(int amount);
+	void UpgradeAttack(int amount);
+	void UpgradeDefense(int amount);
 	void AddItem(const std::string& item);
 	bool IsAlive() const;
 };

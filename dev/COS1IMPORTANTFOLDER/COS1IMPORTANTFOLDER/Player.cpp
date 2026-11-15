@@ -38,6 +38,14 @@ void Player::ModifyCrumbs(int amount) {
 	if (mCrumbs < 0) mCrumbs = 0;
 }
 
+void Player::UpgradeAttack(int amount) {
+	mAttackBonus += amount;
+}
+
+void Player::UpgradeDefense(int amount) {
+	mDefenseBonus += amount;
+}
+
 void Player::AddItem(const std::string& item) {
 	mInventory.push_back(item);
 	if (item == "Splinter Spear") {

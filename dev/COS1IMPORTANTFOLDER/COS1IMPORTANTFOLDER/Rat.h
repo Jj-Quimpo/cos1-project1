@@ -5,7 +5,11 @@ enum class RatType
 {
 	LowlyRat,
 	EliteRat,
-	RatKnight
+	RatKnight,
+	//BOSSES
+	FatRat,
+	RoachHunter,
+	Abomination
 };
 
 class Rat

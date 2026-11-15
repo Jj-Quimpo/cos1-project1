@@ -3,6 +3,6 @@
 class CombatSystem
 {
 public: 
-	static void EngageBattle(Player& player, int currentFloor);
+	static void EngageBattle(Player& player, int currentFloor, bool isBoss = false);
 };
 
