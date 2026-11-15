@@ -4,6 +4,9 @@
 
 Rat::Rat(RatType type) {
 	mType = type;
+	mHealth = 0;
+	mBaseAttack = 0;
+	mCrumbReward = 0;
 
 	if (mType == RatType::LowlyRat) {
 		mName = "Lowly Rat";
@@ -76,6 +79,9 @@ void Rat::ExecuteTurn(Player& player, bool isPlayerDefending) {
 	}
 
 	// Apply defense reduction if player chose to Defend
+	damage -= player.GetDefenseBonus();
+	if (damage < 1) damage = 1;
+
 	if (isPlayerDefending) {
 		damage /= 3;
 		std::cout << "You block most of the blow! You take " << damage << " damage!\n";

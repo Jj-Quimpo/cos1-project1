@@ -54,7 +54,7 @@ void Dungeon::StartGame(Player& player) {
 }
 
 void Dungeon::HandleRatAmbush(Player& player) {
-	CombatSystem::EngageBattle(player);
+	CombatSystem::EngageBattle(player, mFloorsSurvived);
 }
 
 void Dungeon::HandleHungryRoaches(Player& player) {
