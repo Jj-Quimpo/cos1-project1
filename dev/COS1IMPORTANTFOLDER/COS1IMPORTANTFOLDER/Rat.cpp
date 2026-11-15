@@ -144,15 +144,16 @@ void Rat::ExecuteTurn(Player& player, bool isPlayerDefending) {
 	}
 	//Regular attacks get a damage reduction for defense while pierceArmor ignors
 	if (!pierceArmor) {
-	damage -= player.GetDefenseBonus();
-	if (damage < 1) damage = 1;
+		damage -= player.GetDefenseBonus();
+		if (damage < 1) damage = 1;
 
-	if (isPlayerDefending) {
-		damage /= 3;
-		std::cout << "You block most of the blow! You take " << damage << " damage!\n";
+		if (isPlayerDefending) {
+			damage /= 3;
+			std::cout << "You block most of the blow! You take " << damage << " damage!\n";
+		}
+		else {
+			std::cout << "You take " << damage << " damage!\n";
+		}
+		player.ModifyHealth(-damage);
 	}
-	else {
-		std::cout << "You take " << damage << " damage!\n";
-	}
-	player.ModifyHealth(-damage);
 }

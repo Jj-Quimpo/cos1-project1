@@ -32,6 +32,8 @@ public:
 	void AddItem(const std::string& item);
 	bool UseHealingItem();
 	int GetHealingItemCount() const;
+	int GetItemCount(const std::string& itemName) const;
+	bool UseSpecificItem(const std::string& itemName);
 	bool IsAlive() const;
 };
 

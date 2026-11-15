@@ -89,7 +89,9 @@ bool Player::UseHealingItem() {
 	}
 	return false;
 }
-
+int Player::GetItemCount(const std::string& itemName) const {
+	return static_cast<int>(std::count(mInventory.begin(), mInventory.end(), itemName));
+}
 int Player::GetHealingItemCount() const {
 	int count = 0;
 	for (const std::string& item : mInventory) {
@@ -98,6 +100,21 @@ int Player::GetHealingItemCount() const {
 		}
 	}
 	return count;
+}
+bool Player::UseSpecificItem(const std::string& itemName) {
+	auto it = std::find(mInventory.begin(), mInventory.end(), itemName);
+	if (it != mInventory.end()) {
+		mInventory.erase(it);
+
+		if (itemName == "Sugar Cube") {
+			ModifyHealth(35);
+		}
+		else if (itemName == "Stale Sugar Crystal") {
+			ModifyHealth(10);
+		}
+		return true;
+	}
+	return false;
 }
 
 bool Player::IsAlive() const {

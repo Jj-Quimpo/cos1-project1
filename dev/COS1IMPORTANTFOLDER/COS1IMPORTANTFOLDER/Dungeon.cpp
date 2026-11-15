@@ -3,6 +3,7 @@
 #include "CombatSystem.h"
 #include <iostream>
 #include <cstdlib>
+#include "Merchant.h"
 
 Dungeon::Dungeon() {
 	mFloorsSurvived = 0;
@@ -30,16 +31,24 @@ void Dungeon::StartGame(Player& player) {
 			Helper::PauseConsole();
 			CombatSystem::EngageBattle(player, mFloorsSurvived, true);
 		}
+		else if (mFloorsSurvived % 10 == 9) {
+			std::cout << "A friendly lantern flickers ahead-the Shady Roach Merchant sets up camp before the boss!\n";
+			Helper::PauseConsole();
+			Merchant::OpenShop(player);
+		}
 		else {
 			int scenarioRoll = (std::rand() % 100) + 1;
 			if (scenarioRoll <= 25) {
 				HandleRatAmbush(player);
 			}
-			else if (scenarioRoll <= 55) {
+			else if (scenarioRoll <= 50) {
 				HandleHungryRoaches(player);
 			}
-			else if (scenarioRoll <= 85) {
+			else if (scenarioRoll <= 75) {
 				HandleCrumbCache(player);
+			}
+			else if (scenarioRoll <= 90) {
+				Merchant::OpenShop(player);
 			}
 			else {
 				HandleEmptyFloor(player);

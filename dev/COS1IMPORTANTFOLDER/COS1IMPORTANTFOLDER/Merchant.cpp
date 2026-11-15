@@ -7,9 +7,9 @@ void Merchant::OpenShop(Player& player) {
 
 	while (shopping) {
 		Helper::ClearConsoleWindow();
-		std::cout << "====================================================\n";
+		std::cout << "==========================================================\n";
 		std::cout << "SHADY ROACH MERCHANT: \"GOT ANY CRUMBS?\"\n";
-		std::cout << "====================================================\n";
+		std::cout << "==========================================================\n";
 		std::cout << "A heavily scarred roach opens his wings to show his wares.\n";
 		std::cout << "Your Stats | HP: " << player.GetHealth() << " | Crumbs: " << player.GetCrumbs() << " | ATK: " << player.GetAttackPower() << " | DEF: " << player.GetDefenseBonus() << "\n";
 		std::cout << "----------------------------------------------------------\n";
@@ -43,6 +43,7 @@ void Merchant::OpenShop(Player& player) {
 			else {
 				std::cout << "\"Are you messing with me? you need 5 crumbs if you want this!\"\n";
 			}
+			Helper::PauseConsole();
 		}
 		else if (choice == 3) {
 			if (player.GetCrumbs() >= 12) {
