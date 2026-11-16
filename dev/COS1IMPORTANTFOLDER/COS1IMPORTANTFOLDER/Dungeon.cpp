@@ -3,6 +3,7 @@
 #include "CombatSystem.h"
 #include <iostream>
 #include <cstdlib>
+#include "Merchant.h"
 
 Dungeon::Dungeon() {
 	mFloorsSurvived = 0;
@@ -24,21 +25,35 @@ void Dungeon::StartGame(Player& player) {
 		Helper::ClearConsoleWindow();
 
 		std::cout << "\nFloor " << mFloorsSurvived << "\n";
-
-		int scenarioRoll = (std::rand() % 100) + 1;
-		if (scenarioRoll <= 25) {
-			HandleRatAmbush(player);
+		std::cout << mFloorDescriptions[std::rand() % mFloorDescriptions.size()] << "\n\n";
+		if (mFloorsSurvived % 10 == 0) {
+			std::cout << "The floor trembles... A massive shadow blocks the path ahead!\n";
+			Helper::PauseConsole();
+			CombatSystem::EngageBattle(player, mFloorsSurvived, true);
 		}
-		else if (scenarioRoll <= 55) {
-			HandleHungryRoaches(player);
-		}
-		else if (scenarioRoll <= 85) {
-			HandleCrumbCache(player);
+		else if (mFloorsSurvived % 10 == 9) {
+			std::cout << "A friendly lantern flickers ahead-the Shady Roach Merchant sets up camp before the boss!\n";
+			Helper::PauseConsole();
+			Merchant::OpenShop(player);
 		}
 		else {
-			HandleEmptyFloor(player);
+			int scenarioRoll = (std::rand() % 100) + 1;
+			if (scenarioRoll <= 25) {
+				HandleRatAmbush(player);
+			}
+			else if (scenarioRoll <= 50) {
+				HandleHungryRoaches(player);
+			}
+			else if (scenarioRoll <= 75) {
+				HandleCrumbCache(player);
+			}
+			else if (scenarioRoll <= 90) {
+				Merchant::OpenShop(player);
+			}
+			else {
+				HandleEmptyFloor(player);
+			}
 		}
-
 		if (player.IsAlive()) {
 			std::cout << "\nSTATS | HP: " << player.GetHealth() << " | Crumbs: " << player.GetCrumbs() << " | Floors Cleared: " << mFloorsSurvived << "\n";
 			std::cout << "\nAnd so you continue forward...\n";
@@ -54,7 +69,7 @@ void Dungeon::StartGame(Player& player) {
 }
 
 void Dungeon::HandleRatAmbush(Player& player) {
-	CombatSystem::EngageBattle(player);
+	CombatSystem::EngageBattle(player, mFloorsSurvived, false);
 }
 
 void Dungeon::HandleHungryRoaches(Player& player) {
