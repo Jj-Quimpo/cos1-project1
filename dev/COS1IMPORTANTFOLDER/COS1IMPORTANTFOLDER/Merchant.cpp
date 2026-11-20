@@ -15,8 +15,8 @@ void Merchant::OpenShop(Player& player) {
 		std::cout << "----------------------------------------------------------\n";
 		std::cout << "1) Sugar Cube (+35 HP)                     - 8 Crumbs\n";
 		std::cout << "2) Stale Sugar Crystal (+15 HP)            - 5 Crumbs\n";
-		std::cout << "3) Sharpened Thumbtack (+5 ATK)            - 10 Crumbs\n";
-		std::cout << "4) Tin Foil Plating (+3 DEF)               - 10 Crumbs\n";
+		std::cout << "3) Sharpened Thumbtack (+2 ATK)            - 10 Crumbs\n";
+		std::cout << "4) Tin Foil Plating (+1 DEF)               - 10 Crumbs\n";
 		std::cout << "5) Leave Shop\n";
 		std::cout << "----------------------------------------------------------\n";
 
@@ -64,7 +64,7 @@ void Merchant::OpenShop(Player& player) {
 		else if (choice == 3) {
 			if (player.GetCrumbs() >= 10) {
 				player.ModifyCrumbs(-10);
-				player.UpgradeAttack(5);
+				player.UpgradeAttack(2);
 				std::cout << "The Merchant upgrades your spear with the [Thumbtack], [Splinter Spear (Lv. " << player.GetSpearLevel() << ")]!\n";
 			}
 			else {
@@ -75,7 +75,7 @@ void Merchant::OpenShop(Player& player) {
 		else if (choice == 4) {
 			if (player.GetCrumbs() >= 10) {
 				player.ModifyCrumbs(-10);
-				player.UpgradeDefense(3);
+				player.UpgradeDefense(1);
 				std::cout << "The merchant rivets scrap tin onto your [Soda Tab Buckler (Lv. " << player.GetShieldLevel() << ")]!\n";
 			}
 			else {
