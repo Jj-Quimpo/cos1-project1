@@ -35,7 +35,7 @@ int main()
 			std::cout << "Others talk of the dangerous rats that attack any poor roach they come across.\n";
 			std::cout << "Of course many roaches venture forth in search of the truth about the kitchen walls, some return many don't.\n";
 			std::cout << "This is the tale of one roach who decided they wanted to quench their curisoty and witness what lies behind the plaster.\n";
-			std::cout << "-------------------------------------------------------------------------------------------------------------------------\n\n";
+			std::cout << "------------------------------------------------------------------------------------------------------------------------\n\n";
 			std::cout << "What is the name of this brave yet foolish roach: ";
 			std::string roachName;
 			std::getline(std::cin, roachName);

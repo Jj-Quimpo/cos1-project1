@@ -84,7 +84,7 @@ bool Player::UseHealingItem() {
 	auto crystalIt = std::find(mInventory.begin(), mInventory.end(), "Stale Sugar Crystal");
 	if (crystalIt != mInventory.end()) {
 		mInventory.erase(crystalIt);
-		ModifyHealth(10);
+		ModifyHealth(15);
 		return true;
 	}
 	return false;
@@ -110,7 +110,7 @@ bool Player::UseSpecificItem(const std::string& itemName) {
 			ModifyHealth(35);
 		}
 		else if (itemName == "Stale Sugar Crystal") {
-			ModifyHealth(10);
+			ModifyHealth(15);
 		}
 		return true;
 	}

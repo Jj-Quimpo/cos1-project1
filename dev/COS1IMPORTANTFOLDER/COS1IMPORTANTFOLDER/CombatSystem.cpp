@@ -72,7 +72,7 @@ void CombatSystem::EngageBattle(Player& player, int currentFloor, bool isBoss)
 		else if (choice == 3) {
 			std::cout << "--- SELECT HEALING ITEM ---\n";
 			std::cout << "1) Sugar Cube (+35 HP)             [Owned: " << sugarCubes << "]\n";
-			std::cout << "2) Stale Sugar Crystal (+10 HP)    [Owned: " << staleCrystals << "]\n";
+			std::cout << "2) Stale Sugar Crystal (+15 HP)    [Owned: " << staleCrystals << "]\n";
 			std::cout << "3) Cancel (Go Back)\n";
 
 			unsigned int itemChoice = Helper::GetChoice(1, 3);
@@ -88,7 +88,7 @@ void CombatSystem::EngageBattle(Player& player, int currentFloor, bool isBoss)
 			}
 			else if (itemChoice == 2) {
 				if (player.UseSpecificItem("Stale Sugar Crystal")) {
-					std::cout << "You nibble on a Stale Sugar Crystal! (+10 HP) Current HP: " << player.GetHealth() << "\n";
+					std::cout << "You nibble on a Stale Sugar Crystal! (+15 HP) Current HP: " << player.GetHealth() << "\n";
 				}
 				else {
 					std::cout << "You dont have any Stale Sugar Crystal!\n";
