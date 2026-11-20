@@ -20,7 +20,23 @@ void Merchant::OpenShop(Player& player) {
 		std::cout << "5) Leave Shop\n";
 		std::cout << "----------------------------------------------------------\n";
 
-		unsigned int choice = Helper::GetChoice(1, 5);
+		int choice = 0;
+		while (true) {
+			std::cout << "What will you do? (1-5): ";
+			std::string input;
+			std::getline(std::cin, input);
+
+			try {
+				choice = std::stoi(input);
+				if (choice >= 1 && choice <= 5) {
+					break;
+				}
+			}
+			catch (...) {
+
+			}
+			std::cout << "Invalid choice. Please try again.\n";
+		}
 		std::cout << "\n";
 
 		if (choice == 1) {

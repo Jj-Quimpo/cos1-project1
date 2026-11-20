@@ -226,8 +226,8 @@ void Dungeon::HandleHungryRoaches(Player& player) {
 			std::cout << "\nThe rock missed but as you turn to confront them they were no where to be seen.\n";
 		}
 		else {
-			std::cout << "\nThe rock hits your head causing 12 damage, you try to look to see who've done it but they were no where to be seen.\n";
-			player.ModifyHealth(-12);
+			std::cout << "\nThe rock hits your head causing 7 damage, you try to look to see who've done it but they were no where to be seen.\n";
+			player.ModifyHealth(-7);
 			std::cout << "Current Health: " << player.GetHealth() << "\n";
 		}
 	}
@@ -261,8 +261,8 @@ void Dungeon::HandleCrumbCache(Player& player) {
 	if (choice == 1)
 	{
 		std::cout << "\n Delicious! You gorge yourself with the tasty crumbs without a second thought.";
-		player.ModifyHealth(25);
-		std::cout << "(+25 HP restored! Current Health: " << player.GetHealth() << ")\n";
+		player.ModifyHealth(20);
+		std::cout << "(+20 HP restored! Current Health: " << player.GetHealth() << ")\n";
 	}
 	else
 	{
