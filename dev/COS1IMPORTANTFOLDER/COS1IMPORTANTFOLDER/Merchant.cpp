@@ -85,6 +85,7 @@ void Merchant::OpenShop(Player& player) {
 		}
 		else if (choice == 5) {
 			std::cout << "\"Stay out of the mousetraps, friend!\" The merchant vanishes into a crack.\n";
+			Helper::PauseConsole();
 			shopping = false;
 		}
 	}

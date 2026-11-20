@@ -22,25 +22,25 @@ Rat::Rat(RatType type) {
 	}
 	else if (mType == RatType::RatKnight) {
 		mName = "Rat Knight";
-		mHealth = 95;
+		mHealth = 85;
 		mBaseAttack = 12;
 		mCrumbReward = 12;
 	}
 	else if (mType == RatType::FatRat) {
 		mName = "BOSS: The Fat Rat";
-		mHealth = 150;
+		mHealth = 100;
 		mBaseAttack = 16;
 		mCrumbReward = 25;
 	}
 	else if (mType == RatType::RoachHunter) {
 		mName = "BOSS: The Roach Hunter";
-		mHealth = 120;
+		mHealth = 115;
 		mBaseAttack = 18;
 		mCrumbReward = 30;
 	}
 	else if (mType == RatType::Abomination) {
 		mName = "BOSS: The Wall Abomination";
-		mHealth = 185;
+		mHealth = 150;
 		mBaseAttack = 20;
 		mCrumbReward = 45;
 	}
