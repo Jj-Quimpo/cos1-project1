@@ -4,6 +4,7 @@
 #include <iostream>
 #include <cstdlib>
 #include "Merchant.h"
+#include "Leaderboard.h"
 
 Dungeon::Dungeon() {
 	mFloorsSurvived = 0;
@@ -62,10 +63,16 @@ void Dungeon::StartGame(Player& player) {
 	}
 
 	Helper::ClearConsoleWindow();
-	std::cout << "YOU ARE NOTHING MORE THAN JUST A CORPSE...\n\n";
-	std::cout << player.GetName() << " pershed inside the drywall.\n\n";
+	std::cout << "===============================================\n";
+	std::cout << "YOU ARE NOTHING MORE THAN JUST A CORPSE...\n";
+	std::cout << "===============================================\n\n";
+	std::cout << player.GetName() << " pershed inside the drywall.\n";
 	std::cout << "Floors Explored: " << mFloorsSurvived << "\n";
 	std::cout << "Final Crumb Count: " << player.GetCrumbs() << "\n";
+	std::cout << "===============================================\n";
+
+	Leaderboard::RecordScore(player.GetName(), mFloorsSurvived, player.GetCrumbs());
+	std::cout << "Your run has been recorded on the Leaderboard!\n";
 }
 
 void Dungeon::HandleRatAmbush(Player& player) {
