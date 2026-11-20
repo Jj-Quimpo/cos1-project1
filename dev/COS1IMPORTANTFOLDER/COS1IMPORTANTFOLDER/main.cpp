@@ -5,6 +5,7 @@
 #include "Helper.h"
 #include "Player.h"
 #include "Dungeon.h"
+#include "Leaderboard.h"
 
 int main()
 {
@@ -12,14 +13,17 @@ int main()
 	bool menuRunning = true;
 
 	while (menuRunning) {
+		Helper::ClearConsoleWindow();
+
 		std::cout << "====================================\n";
 		std::cout << " COCKROACHES TALE: THE KITCHEN WALL \n";
 		std::cout << "====================================\n";
 		std::cout << " 1) Start Journey\n";
-		std::cout << " 2) Exit Game\n";
+		std::cout << " 2) View Leaderboard\n";
+		std::cout << " 3) Exit Game\n";
 		std::cout << "====================================\n";
 
-		unsigned int choice = Helper::GetChoice(1, 2);
+		unsigned int choice = Helper::GetChoice(1, 3);
 
 		switch (choice)
 		{
@@ -31,7 +35,7 @@ int main()
 			std::cout << "Others talk of the dangerous rats that attack any poor roach they come across.\n";
 			std::cout << "Of course many roaches venture forth in search of the truth about the kitchen walls, some return many don't.\n";
 			std::cout << "This is the tale of one roach who decided they wanted to quench their curisoty and witness what lies behind the plaster.\n";
-			std::cout << "-------------------------------------------------------------------------------------------------------------------------\n\n";
+			std::cout << "------------------------------------------------------------------------------------------------------------------------\n\n";
 			std::cout << "What is the name of this brave yet foolish roach: ";
 			std::string roachName;
 			std::getline(std::cin, roachName);
@@ -46,6 +50,14 @@ int main()
 			break;
 		}
 		case 2:
+		{
+			
+			Leaderboard::DisplayLeaderboard();
+			std::cout << "\n";
+			Helper::PauseConsole();
+			break;
+		}
+		case 3:
 		{
 			Helper::ClearConsoleWindow();
 			std::cout << "\nYou decide to lay your ambitions to rest for now...\n\n";

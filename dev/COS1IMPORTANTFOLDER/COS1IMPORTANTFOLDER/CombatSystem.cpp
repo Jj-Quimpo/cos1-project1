@@ -57,7 +57,23 @@ void CombatSystem::EngageBattle(Player& player, int currentFloor, bool isBoss)
 		std::cout << "3) Use Healing Item\n";
 		std::cout << "4) Desperate Scramble (Try to flee)\n";
 		
-		unsigned int choice = Helper::GetChoice(1, 4);
+		int choice = 0;
+		while (true) {
+			std::cout << "What will you do? (1-4): ";
+			std::string input;
+			std::getline(std::cin, input);
+
+			try {
+				choice = std::stoi(input);
+				if (choice >= 1 && choice <= 4) {
+					break;
+				}
+			}
+			catch (...) {
+
+			}
+			std::cout << "Invalid choice. Please try again.\n";
+		}
 		std::cout << "\n";
 
 		if (choice == 1) {
@@ -72,10 +88,26 @@ void CombatSystem::EngageBattle(Player& player, int currentFloor, bool isBoss)
 		else if (choice == 3) {
 			std::cout << "--- SELECT HEALING ITEM ---\n";
 			std::cout << "1) Sugar Cube (+35 HP)             [Owned: " << sugarCubes << "]\n";
-			std::cout << "2) Stale Sugar Crystal (+10 HP)    [Owned: " << staleCrystals << "]\n";
+			std::cout << "2) Stale Sugar Crystal (+15 HP)    [Owned: " << staleCrystals << "]\n";
 			std::cout << "3) Cancel (Go Back)\n";
 
-			unsigned int itemChoice = Helper::GetChoice(1, 3);
+			int itemChoice = 0;
+			while (true) {
+				std::cout << "What will you do? (1-3): ";
+				std::string input;
+				std::getline(std::cin, input);
+
+				try {
+					itemChoice = std::stoi(input);
+					if (itemChoice >= 1 && itemChoice <= 3) {
+						break;
+					}
+				}
+				catch (...) {
+
+				}
+				std::cout << "Invalid choice. Please try again.\n";
+			}
 			std::cout << "\n";
 			if (itemChoice == 1) {
 				if (player.UseSpecificItem("Sugar Cube")) {
@@ -88,7 +120,7 @@ void CombatSystem::EngageBattle(Player& player, int currentFloor, bool isBoss)
 			}
 			else if (itemChoice == 2) {
 				if (player.UseSpecificItem("Stale Sugar Crystal")) {
-					std::cout << "You nibble on a Stale Sugar Crystal! (+10 HP) Current HP: " << player.GetHealth() << "\n";
+					std::cout << "You nibble on a Stale Sugar Crystal! (+15 HP) Current HP: " << player.GetHealth() << "\n";
 				}
 				else {
 					std::cout << "You dont have any Stale Sugar Crystal!\n";

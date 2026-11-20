@@ -62,4 +62,12 @@ Each week I will summarize my milestone activity and progress by writing a stand
 
 ### Week 4
 
-My final stand up...
+Overview – What did you accomplish this past week? This week, I finalized my C++ text-adventure dungeon crawler (silent rpg) by adding persistent binary leaderboard tracking, a between floor management menu, rare drops, and full-game over and "retreat" summaries. I also finished testing and debugging all core gameplay loops, including the turn-based combat system, boss floors every 10 levels, and the merchant upgrade shop. 
+
+Project Wrap-Up – What did you finish, polish, or improve before submitting your final project? Before wrapping up the project, I polished the user interface by adding console clearing between floors and menu transitions so old text does not clutter the screen. I also refined the gameplay pacing by adding a between-floor menu that lets players inspect their inventory, eat specific healing items, or retire early to save their score, and I rebalanced crumb cache rewards and rare empty-room drops. 
+
+Challenges – What obstacles did you face, and how did you overcome them? One major bug I ran into was that armor-piercing boss attacks from roach hunter and Abomination were dealing 0 damage. by checking the braces in Rat::ExecuteTurn, I found that player.ModifyHealth(-damage) had accidently been wrapped inside the if (!pierceArmor) block, causing it to skip applying damage whenever pierceArmor was true. I also debugged a binary file loading issue in Leaderboard by printing debug notes to verify file reads and writes. 
+
+Biggest Takeaway – Looking back, what was the most valuable thing you learned during this course? Understanding how to control game flow with loops. From infinite floor progression and turn-based combat to input validation menus.
+
+Future Development – If you continued this project after the course, what would you build or improve next? I would like to improve or build a way to scale the enemies, rewards, health and damage the farther the player goes. I feel I was too forgiving while balancing the numbers of certain enemies especially the bosses and how frequent it was for the player to receive large amounts of crumbs.

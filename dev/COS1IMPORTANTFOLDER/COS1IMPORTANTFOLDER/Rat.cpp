@@ -11,37 +11,37 @@ Rat::Rat(RatType type) {
 	if (mType == RatType::LowlyRat) {
 		mName = "Lowly Rat";
 		mHealth = 40;
-		mBaseAttack = 10;
-		mCrumbReward = 3;
+		mBaseAttack = 5;
+		mCrumbReward = 4;
 	}
 	else if (mType == RatType::EliteRat) {
 		mName = "Elite Rate";
 		mHealth = 65;
-		mBaseAttack = 15;
+		mBaseAttack = 8;
 		mCrumbReward = 6;
 	}
 	else if (mType == RatType::RatKnight) {
 		mName = "Rat Knight";
-		mHealth = 95;
-		mBaseAttack = 20;
+		mHealth = 85;
+		mBaseAttack = 12;
 		mCrumbReward = 12;
 	}
 	else if (mType == RatType::FatRat) {
 		mName = "BOSS: The Fat Rat";
-		mHealth = 150;
-		mBaseAttack = 18;
+		mHealth = 100;
+		mBaseAttack = 16;
 		mCrumbReward = 25;
 	}
 	else if (mType == RatType::RoachHunter) {
 		mName = "BOSS: The Roach Hunter";
-		mHealth = 120;
-		mBaseAttack = 24;
+		mHealth = 115;
+		mBaseAttack = 18;
 		mCrumbReward = 30;
 	}
 	else if (mType == RatType::Abomination) {
 		mName = "BOSS: The Wall Abomination";
-		mHealth = 185;
-		mBaseAttack = 22;
+		mHealth = 150;
+		mBaseAttack = 20;
 		mCrumbReward = 45;
 	}
 }
@@ -102,8 +102,8 @@ void Rat::ExecuteTurn(Player& player, bool isPlayerDefending) {
 			damage += 8;
 		}
 		else if (moveRoll < 75) {
-			std::cout << "The Fat Rat swallows a whole slice of crust and heals 20 HP!\n";
-			mHealth += 20;
+			std::cout << "The Fat Rat swallows a whole slice of crust and heals 8 HP!\n";
+			mHealth += 8;
 			return;
 		}
 		else {
@@ -137,8 +137,8 @@ void Rat::ExecuteTurn(Player& player, bool isPlayerDefending) {
 			damage += 9;
 		}
 		else {
-			std::cout << "The Abomination's mutated cells knit together, regenerating 25HP!\n";
-			mHealth += 25;
+			std::cout << "The Abomination's mutated cells knit together, regenerating 15HP!\n";
+			mHealth += 15;
 			return;
 		}
 	}
@@ -146,9 +146,10 @@ void Rat::ExecuteTurn(Player& player, bool isPlayerDefending) {
 	if (!pierceArmor) {
 		damage -= player.GetDefenseBonus();
 		if (damage < 1) damage = 1;
-
+	}
 		if (isPlayerDefending) {
 			damage /= 3;
+			if (damage < 1) damage = 1;
 			std::cout << "You block most of the blow! You take " << damage << " damage!\n";
 		}
 		else {
@@ -156,4 +157,3 @@ void Rat::ExecuteTurn(Player& player, bool isPlayerDefending) {
 		}
 		player.ModifyHealth(-damage);
 	}
-}
